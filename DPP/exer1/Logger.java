@@ -10,6 +10,7 @@ public class Logger {
         System.out.println("[Logger] Instance created: " + this.hashCode());
     }
 
+    @SuppressWarnings("DoubleCheckedLocking")
     public static Logger getInstance() {
         if (instance == null) {                
             synchronized (Logger.class) {
