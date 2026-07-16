@@ -1,3 +1,5 @@
+
+
 public class WordDocument extends Document {
     @Override
     public void open() {

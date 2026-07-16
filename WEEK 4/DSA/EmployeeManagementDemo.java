@@ -1,4 +1,3 @@
-
 public class EmployeeManagementDemo {
     private Employee[] employees;
     private int count;

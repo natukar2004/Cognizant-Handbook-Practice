@@ -1,3 +1,5 @@
+package week_1.dsa;
+
 // Source code is decompiled from a .class file using FernFlower decompiler (from Intellij IDEA).
 public class Product {
    private String productId;
@@ -44,3 +46,4 @@ public class Product {
       return String.format("ID: %-8s | Name: %-20s | Qty: %-6d | Price: $%.2f", this.productId, this.productName, this.quantity, this.price);
    }
 }
+

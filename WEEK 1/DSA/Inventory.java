@@ -1,3 +1,5 @@
+package week_1.dsa;
+
 // Source code is decompiled from a .class file using FernFlower decompiler (from Intellij IDEA).
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -96,3 +98,4 @@ public class Inventory {
       return this.products.size();
    }
 }
+

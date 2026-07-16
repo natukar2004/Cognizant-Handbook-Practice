@@ -1,4 +1,5 @@
 public class FactoryMethodTest {
+    
     public static void main(String[] args) {
         DocumentFactory wordFactory = new WordDocumentFactory();
         Document word = wordFactory.openNewDocument();

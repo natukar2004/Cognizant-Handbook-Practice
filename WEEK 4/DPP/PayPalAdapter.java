@@ -1,8 +1,10 @@
 
+
+
 public class PayPalAdapter implements PaymentProcessor {
     private final PayPalGateway payPalGateway;
 
-    public PayPalAdapter(PayPalGateway payPalGateway) {
+    PayPalAdapter(PayPalGateway payPalGateway) {
         this.payPalGateway = payPalGateway;
     }
 
@@ -11,6 +13,6 @@ public class PayPalAdapter implements PaymentProcessor {
         if (!currency.equalsIgnoreCase("USD")) {
             System.out.println("[PayPalAdapter] Note: PayPal gateway here only supports USD in this demo.");
         }
-        payPalGateway.makePayPalPayment(amount);
+        payPalGateway.makePayment(amount);
     }
 }

@@ -1,10 +1,12 @@
+package week_1.dpp;
+
 
 public class SingletonTest {
 
     public static void main(String[] args) throws InterruptedException {
         System.out.println("=== Single-threaded check ===");
 
-        logger logger1 = Logger.getInstance();
+        Logger logger1 = Logger.getInstance();
         logger1.log("First message via logger1");
 
         Logger logger2 = Logger.getInstance();

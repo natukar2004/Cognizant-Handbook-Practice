@@ -1,3 +1,5 @@
+package week_3.dsa;
+
 public class QuickSort {
 
     public static void sort(Order[] orders, int low, int high) {

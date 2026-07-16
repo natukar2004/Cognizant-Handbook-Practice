@@ -1,3 +1,5 @@
+
+
 public class Computer {
    
     private final String cpu;
@@ -47,7 +49,7 @@ public class Computer {
         private final String ram;
         private final String storage;
 
-        // Optional attributes — default values
+        // Optional attributes â€” default values
         private String gpu;
         private String motherboard;
         private String powerSupply;

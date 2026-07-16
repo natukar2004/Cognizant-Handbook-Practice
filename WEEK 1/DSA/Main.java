@@ -1,3 +1,5 @@
+package week_1.dsa;
+
 import java.util.List;
 
 public class Main {
