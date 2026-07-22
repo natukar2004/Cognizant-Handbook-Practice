@@ -116,3 +116,59 @@ EXCEPTION
         DBMS_OUTPUT.PUT_LINE('Fatal error during annual fee run, rolled back: ' || SQLERRM);
 END;
 /
+
+
+
+
+
+SET SERVEROUTPUT ON;
+
+DECLARE
+    CURSOR UpdateLoanInterestRates IS
+        SELECT loan_id, loan_type, interest_rate
+        FROM   loans
+        FOR UPDATE OF interest_rate;
+
+    v_new_rate       loans.interest_rate%TYPE;
+    v_loans_updated  NUMBER := 0;
+
+BEGIN
+    FOR rec IN UpdateLoanInterestRates LOOP
+        BEGIN
+            -- New policy rates by loan type. Extend this CASE as the
+            -- bank introduces new loan categories.
+            CASE rec.loan_type
+                WHEN 'HOME'      THEN v_new_rate := 7.5;
+                WHEN 'AUTO'      THEN v_new_rate := 9.0;
+                WHEN 'PERSONAL'  THEN v_new_rate := 12.5;
+                WHEN 'EDUCATION' THEN v_new_rate := 6.0;
+                ELSE
+                    RAISE e_unknown_loan_type;
+            END CASE;
+
+            UPDATE loans
+            SET    interest_rate = v_new_rate
+            WHERE  CURRENT OF UpdateLoanInterestRates;
+
+            v_loans_updated := v_loans_updated + 1;
+
+        EXCEPTION
+            WHEN e_unknown_loan_type THEN
+                DBMS_OUTPUT.PUT_LINE('Loan ' || rec.loan_id
+                                      || ' has unrecognized loan_type "'
+                                      || rec.loan_type || '" — skipped, no policy rate defined.');
+            WHEN OTHERS THEN
+                DBMS_OUTPUT.PUT_LINE('Error updating loan ' || rec.loan_id
+                                      || ': ' || SQLERRM);
+        END;
+    END LOOP;
+
+    COMMIT;
+    DBMS_OUTPUT.PUT_LINE('Interest rate update complete. Loans updated: ' || v_loans_updated);
+
+EXCEPTION
+    WHEN OTHERS THEN
+        ROLLBACK;
+        DBMS_OUTPUT.PUT_LINE('Fatal error during interest rate update, rolled back: ' || SQLERRM);
+END;
+/
