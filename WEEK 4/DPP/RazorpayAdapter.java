@@ -1,5 +1,3 @@
-package week_4.dpp;
-
 public class RazorpayAdapter implements PaymentProcessor {
     private final RazorpayGateway razorpayGateway;
 
@@ -11,4 +9,12 @@ public class RazorpayAdapter implements PaymentProcessor {
     public void processPayment(double amount, String currency) {
         razorpayGateway.pay(currency, amount);
     }
+}
+
+interface PaymentProcessor {
+    void processPayment(double amount, String currency);
+}
+
+interface RazorpayGateway {
+    void pay(String currency, double amount);
 }
