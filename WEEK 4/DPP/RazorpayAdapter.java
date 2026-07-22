@@ -1,5 +1,4 @@
-
-
+package week_4.dpp;
 
 public class RazorpayAdapter implements PaymentProcessor {
     private final RazorpayGateway razorpayGateway;
@@ -10,6 +9,6 @@ public class RazorpayAdapter implements PaymentProcessor {
 
     @Override
     public void processPayment(double amount, String currency) {
-        razorpayGateway.pay(amount, currency);
+        razorpayGateway.pay(currency, amount);
     }
 }
