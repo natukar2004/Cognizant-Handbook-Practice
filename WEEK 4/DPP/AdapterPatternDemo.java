@@ -1,5 +1,3 @@
-
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,11 +9,21 @@ class PayPalGateway {
     void sendPayment(double amount, String currency) {
         System.out.println("PayPal processed payment of " + amount + " " + currency);
     }
+
+    public void makePayPalPayment(double amount) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'makePayPalPayment'");
+    }
 }
 
 class StripeGateway {
     void createCharge(double amount, String currency) {
         System.out.println("Stripe processed payment of " + amount + " " + currency);
+    }
+
+    public void charge(int amountInCents) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'charge'");
     }
 }
 

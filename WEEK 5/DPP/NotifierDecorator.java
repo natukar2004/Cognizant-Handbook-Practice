@@ -1,4 +1,3 @@
-
 public abstract class NotifierDecorator implements Notifier {
     protected Notifier wrappedNotifier;
 
@@ -8,8 +7,7 @@ public abstract class NotifierDecorator implements Notifier {
 
     @Override
     public void send(String message) {
-        // Base behavior: delegate to whatever this decorator wraps.
-        // Concrete subclasses override this to add their own channel on top.
+       
         wrappedNotifier.send(message);
     }
 }

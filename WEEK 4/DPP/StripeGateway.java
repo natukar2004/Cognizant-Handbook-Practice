@@ -3,4 +3,9 @@ public class StripeGateway {
     public void sendPayment(long amountInCents, String currencyCode) {
         System.out.println("[Stripe] Charging " + amountInCents + " cents (" + currencyCode + ")");
     }
+
+    void charge(int amountInCents) {
+        sendPayment(amountInCents, "USD");
+    }
+
 }
