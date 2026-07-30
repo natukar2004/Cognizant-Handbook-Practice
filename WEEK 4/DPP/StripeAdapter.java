@@ -7,7 +7,7 @@ public class StripeAdapter implements PaymentProcessor {
 
     @Override
     public void processPayment(double amount, String currency) {
-        long amountInCents = Math.round(amount * 100);
-        stripeGateway.charge(amountInCents, currency);
+        int amountInCents = (int) Math.round(amount * 100);
+        stripeGateway.charge(amountInCents);
     }
 }
