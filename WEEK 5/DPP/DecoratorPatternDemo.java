@@ -1,6 +1,4 @@
-/**
- * Demonstrates composing notification channels dynamically via decorators.
- */
+
 public class DecoratorPatternDemo {
     public static void main(String[] args) {
 
