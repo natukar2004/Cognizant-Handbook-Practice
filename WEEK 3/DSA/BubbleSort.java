@@ -1,5 +1,3 @@
-package week_3.dsa;
-
 public class BubbleSort {
 
     public static void sort(Order[] orders) {

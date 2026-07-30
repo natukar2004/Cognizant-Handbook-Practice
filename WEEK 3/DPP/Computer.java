@@ -1,5 +1,3 @@
-
-
 public class Computer {
    
     private final String cpu;
