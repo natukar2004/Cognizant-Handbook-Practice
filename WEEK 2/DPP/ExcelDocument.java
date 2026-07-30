@@ -1,5 +1,3 @@
-
-
 public class ExcelDocument extends Document {
     @Override
     public void open() {

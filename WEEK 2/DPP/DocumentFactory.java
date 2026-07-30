@@ -1,5 +1,3 @@
-
-
 public abstract class DocumentFactory {
 
     // The factory method â€” subclasses decide which concrete class to instantiate
