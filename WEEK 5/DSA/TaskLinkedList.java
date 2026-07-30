@@ -1,16 +1,5 @@
-/**
- * Singly Linked List implementation for managing Tasks.
- *
- * Supported operations:
- *  - addTask(task)          : append a new task at the tail   -> O(1) with tail pointer
- *  - addTaskAtFront(task)   : insert a new task at the head   -> O(1)
- *  - searchTask(taskId)     : find a task by ID               -> O(n)
- *  - traverse()             : print all tasks in order        -> O(n)
- *  - deleteTask(taskId)     : remove a task by ID             -> O(n)
- *  - size()                 : number of tasks                 -> O(1)
- */
 public class TaskLinkedList {
-    /** Minimal task model required by this list implementation. */
+    
     public static class Task {
         private final int taskId;
 
@@ -28,7 +17,7 @@ public class TaskLinkedList {
         }
     }
 
-    /** Internal node used to link tasks together. */
+   
     private static class TaskNode {
         private final Task task;
         private TaskNode next;
@@ -39,7 +28,7 @@ public class TaskLinkedList {
     }
 
     private TaskNode head;
-    private TaskNode tail; // kept so addTask() is O(1) instead of walking the list each time
+    private TaskNode tail;
     private int size;
 
     public TaskLinkedList() {
@@ -99,11 +88,7 @@ public class TaskLinkedList {
         System.out.println("-----------------");
     }
 
-    /**
-     * Deletes a task by ID.
-     * Returns true if the task was found and deleted, false otherwise.
-     * O(n) — must walk from head to find the predecessor of the target node.
-     */
+    
     public boolean deleteTask(int taskId) {
         if (head == null) {
             return false;
@@ -125,7 +110,7 @@ public class TaskLinkedList {
         while (current != null) {
             if (current.task.getTaskId() == taskId) {
                 prev.next = current.next;
-                if (current == tail) { // deleting the tail node
+                if (current == tail) { 
                     tail = prev;
                 }
                 size--;

@@ -2,19 +2,14 @@ interface Image {
     void display();
 }
 
-/**
- * Proxy: stands in for RealImage. Delays creating (and thus loading) the
- * RealImage until display() is first called (lazy initialization), then
- * caches that instance so subsequent display() calls skip the remote
- * load entirely.
- */
+
 public class ProxyImage implements Image {
     private String fileName;
     private RealImage realImage; // null until first needed — this IS the cache
 
     public ProxyImage(String fileName) {
         this.fileName = fileName;
-        // Note: no loading happens here. Constructing a ProxyImage is cheap.
+       
     }
 
     public void display() {
@@ -28,10 +23,7 @@ public class ProxyImage implements Image {
         realImage.display();
     }
 
-    /**
-     * The real image implementation is kept here so this source file can be
-     * compiled independently when no separate RealImage.java is available.
-     */
+   
     private static class RealImage implements Image {
         private final String fileName;
 

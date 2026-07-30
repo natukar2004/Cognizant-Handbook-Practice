@@ -21,6 +21,8 @@ END$$
 
 DELIMITER ;
 
+
+
 DELIMITER $$
 
 CREATE TRIGGER CheckTransactionRules
