@@ -1,6 +1,3 @@
-package week_1.dpp;
-
-
 public class Logger {
 
     private static volatile Logger instance;

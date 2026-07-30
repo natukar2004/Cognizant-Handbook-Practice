@@ -1,6 +1,3 @@
-package week_1.dsa;
-
-// Source code is decompiled from a .class file using FernFlower decompiler (from Intellij IDEA).
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;

@@ -1,6 +1,3 @@
-package week_1.dsa;
-
-// Source code is decompiled from a .class file using FernFlower decompiler (from Intellij IDEA).
 public class Product {
    private String productId;
    private String productName;

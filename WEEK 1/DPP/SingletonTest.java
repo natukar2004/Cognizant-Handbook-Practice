@@ -1,6 +1,3 @@
-package week_1.dpp;
-
-
 public class SingletonTest {
 
     public static void main(String[] args) throws InterruptedException {
